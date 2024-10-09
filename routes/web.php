@@ -18,19 +18,28 @@ Route::get('/home', function () {
 });
 
 Route::get('/notas', function () {
-   return view('notes.index');
+
+    $notes = [
+        'Primera nota',
+        'Segunda nota',
+        'Tercera nota',
+        'Cuarta nota',
+        'Quinta nota',
+    ];
+
+    return view('notes.index')->with('notes', $notes);
 });
 
 Route::get('/notas/{id}', function ($id) {
-    return 'Detalle de la nota: '.$id;
+    return 'Detalle de la nota: ' . $id;
 });
 
-Route::get('/notas/crear/form', function () {
-   return view('notes.create');
+Route::get('/notas/crear', function () {
+    return view('notes.create');
 });
 
 Route::get('/notas/{id}/editar', function ($id) {
-    return 'Editar nota: '.$id;
+    return 'Editar nota: ' . $id;
 });
 
 Route::get('cursos', function () {
