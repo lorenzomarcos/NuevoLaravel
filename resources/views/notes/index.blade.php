@@ -25,7 +25,10 @@
             </div>
             @endforeach
             <div class="card card-small">
+
                 <div class="card-body">
+                    
+
                     <h4>¿Para qué sirve Composer?</h4>
 
                     <p>

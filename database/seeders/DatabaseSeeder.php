@@ -12,10 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('notes')->insert([
-
-            'title' => 'Nota 1',
-            'content' => 'contenido',
-        ]);
+        $this->call(NoteSeeder::class);
     }
 }
