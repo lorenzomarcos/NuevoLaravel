@@ -41,5 +41,3 @@ Route::get('/notas/crear', function () {
 Route::get('/notas/{id}/editar', function ($id) {
     return 'Editar nota: ' . $id;
 })->name('notes.edit');
-
-
