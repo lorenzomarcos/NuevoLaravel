@@ -1,9 +1,10 @@
 <x-layout>
-    <x-slot name="title"> Listado de notas</x-slot>
+    <x-slot name="title"> Nota {{$note->id}}</x-slot>
     <main class="content">
         <div class="cards">
 
-            @foreach ($notes as $note)
+           
+        
             <div class="card card-small">
                 <div class="card-body">
                     <h4>{{ $note->title }}</h4>
@@ -23,7 +24,7 @@
                     </a>
                 </footer>
             </div>
-            @endforeach
+           
             
         </div>
     </main>
