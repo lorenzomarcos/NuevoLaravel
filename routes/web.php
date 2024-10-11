@@ -23,7 +23,7 @@ Route::get('/home', function () {
 
 Route::get('/notas', function () {
 
-    $notes = DB::table('notes')->orderByDesc('id')->get();
+    $notes = Note::query()->orderByDesc('id')->get();
 
     return view('notes.index')->with('notes', $notes);
 })->name('notes.index');
@@ -56,9 +56,9 @@ Route::get('/notas/crear', function () {
 
 Route::get('/notas/{id}/editar', function ($id) {
 
-    $note =  DB::table('notes')->find($id);
+    $note =  Note::findOrFail($id);
 
-    abort_if($note === null, 404);
+    
 
     return 'Editar nota: ' . $note->title;
 })->name('notes.edit');

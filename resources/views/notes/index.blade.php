@@ -14,7 +14,7 @@
                 </div>
 
                 <footer class="card-footer">
-                    <a href="{{route('notes.edit', ['id' => $note->id])}}" href="link" class="action-link action-edit">
+                    <a href="{{$note->editUrl()}}" href="link" class="action-link action-edit">
                         <i class="icon icon-pen"></i>
                     </a>
 
