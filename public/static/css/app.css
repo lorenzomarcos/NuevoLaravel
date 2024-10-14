@@ -126,25 +126,25 @@ body {
 
 @media (min-width: 700px) {
   .logo {
-      position: absolute;
+    position: absolute;
   }
 
   .main-nav {
-      margin: 0 auto;
+    margin: 0 auto;
   }
 }
 @media (max-width: 699px) {
   .head {
-      justify-content: space-between;
+    justify-content: space-between;
   }
 }
 @media (max-width: 449px) {
   .main-nav-link span {
-      display: none;
+    display: none;
   }
 
   .logo {
-      width: 36px;
+    width: 36px;
   }
 }
 .field-label {
@@ -269,25 +269,25 @@ body {
 
 @media (min-width: 720px) {
   .cards {
-      align-items: stretch;
-      display: flex;
-      flex-wrap: wrap;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .card {
-      flex: 2;
-      min-width: 300px;
+    flex: 2;
+    min-width: 300px;
   }
   .card-small {
-      flex: 1;
+    flex: 1;
   }
   .card-big {
-      flex: 3;
-      min-width: 600px;
+    flex: 3;
+    min-width: 600px;
   }
   .card-center {
-      max-width: 720px;
-      margin: 0 auto;
+    max-width: 720px;
+    margin: 0 auto;
   }
 }
 .foot {
@@ -311,30 +311,6 @@ body {
 .foot p {
   margin: 0;
   padding: 16px;
-}
-
-.field-error {
-  margin-bottom: 12px;
-  border: 1px solid #AF0C0C;
-  box-shadow: 0 2px 4px -2px #7f0909;
-}
-
-.error-message {
-  margin: 0 24px 0;
-  color: #AF0C0C;
-  font-style: italic;
-}
-
-.errors {
-  margin-bottom: 24px;
-  padding: 16px;
-  border: 1px solid #AF0C0C;
-  background-color: #feefef;
-  border-radius: 4px;
-  color: #AF0C0C;
-}
-.errors li {
-  margin-bottom: 6px;
 }
 
 /*# sourceMappingURL=app.css.map */

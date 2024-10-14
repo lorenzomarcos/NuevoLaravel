@@ -1,7 +1,14 @@
 <?php
+
+use App\Http\Controllers\NoteController;
 use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Unique;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,47 +25,12 @@ Route::get('/home', function () {
 });
 
 
+Route::get('/notas', [NoteController::class, 'index'])->name('notes.index');
 
+Route::get('/notas/{id}', [NoteController::class, 'show'])->name('notes.view');
 
+Route::get('/notas/crear', [NoteController::class, 'create'])->name('notes.create');
 
-Route::get('/notas', function () {
+Route::post('/notas', [NoteController::class, 'store'])->name('notes.store');
 
-    $notes = Note::query()->orderByDesc('id')->get();
-
-    return view('notes.index')->with('notes', $notes);
-})->name('notes.index');
-
-
-
-
-
-Route::get('/notas/{id}', function ($id) {
-    
-    $note = DB::table('notes')->find($id);
-    
-
-    abort_if($note === null, 404);
-    
-    return view('notes.show',compact('note'));
-})->name('notes.view');
-
-
-
-
-Route::get('/notas/crear', function () {
-    return view('notes.create');
-})->name('notes.create');
-
-
-
-
-
-
-Route::get('/notas/{id}/editar', function ($id) {
-
-    $note =  Note::findOrFail($id);
-
-    
-
-    return 'Editar nota: ' . $note->title;
-})->name('notes.edit');
+Route::get('/notas/{id}/editar', [NoteController::class, 'edit'])->name('notes.edit');
